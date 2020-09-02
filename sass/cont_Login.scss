@@ -1,0 +1,266 @@
+    .cont_Login{
+        align-content:center;
+        background-image: linear-gradient(
+                    42deg,
+                    var(--fondo-bg-a) 5%,
+                    var(--fondo-bg-b) 54%
+                    );
+        pointer-events:none;
+        background-repeat: no-repeat;
+        display: grid;
+        opacity: 0;
+        visibility:hidden;
+        position: absolute;
+        height:100vh;
+        grid-template-columns: 100vw;
+        grid-template-areas:'article' 
+                            'form';
+        grid-template-rows: 30vh 70vh ;
+        
+        @include landscape(){
+            grid-template-rows: 25vh 75vh;        
+        }
+        @include bp($desktop){
+            grid-template-columns: 50vw;
+            grid-template-rows: 17vh 83vh;
+            pointer-events:visible;
+            opacity:1;
+            visibility:visible;
+        }
+        .article_header{
+            grid-area:article;  
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-self:end;
+            width:100vw;
+            margin-left: auto;
+            margin-right: auto;
+            // font-size: 1rem;
+            @include landscape(){
+                align-self:center;
+            }
+            @include bp($desktop){
+                width:50vw;
+                border-right: .5px solid hsla(180,1%,50%,.3)
+            }
+            & .title_Login{
+                
+            }
+            & .words_Login{
+            }
+        }
+    }
+    .title_Login{
+        // padding-bottom:9px;
+        color: var(--fondoBlanco);
+
+    }
+
+    .form_Login{
+        grid-area:form;
+        align-self:center;
+        margin-left: auto;
+        margin-right: auto;
+        @include bp($desktop){
+            align-self:start;
+            // width:50vw;
+            padding-top:6rem;
+
+        }
+     .words_Login{
+        padding-bottom:.5em;
+        color: var(--colorText);
+        text-align: left;
+        // max-width: 20em;
+        // margin-top:.9em;
+        // margin-left: auto;
+        // line-height:1.6em;
+        // margin-right: auto;
+        // word-wrap: wrap;
+        // font-size: 1.5em;
+
+    }
+        input{
+            // tamaño del boton de enviar Logo|jadex
+            &[type='submit']{ 
+            }
+        }
+
+        .form__grup-btn-send{
+        font-size: 1em;
+        display: flex;
+        // soluciona el colapsado de margenes vertical
+                @include landscape(){
+                }
+                @include bp ($desktop){
+                    // Cuando ponga el loader sacar este  margin y alinear los botones.
+                    margin:6em auto;
+                    margin-top:7.5em;
+                    text-align: center;
+
+                }
+            input.form__grup-login{
+                @extend %styleBtn_ca;
+                @extend %botones;
+                font-size: .7rem;
+                @include bp($desktop){
+                    padding: 1em 1.75em;
+                }
+                // &:focus{
+                // }
+            }
+            .form__grup-cancel{
+                cursor:pointer;
+                text-align: center;
+                font-size: .7rem;
+                @extend %botones;
+                @extend %styleBtn_Close;
+                    padding: 1em 1.75em;
+
+                a{
+                    // color:var(--fondoRojo);
+                    text-decoration: none;
+                    width:100%;
+                    outline:none;
+                    display: block;
+                    // &:focus{
+                    //     outline:none;
+                    //     border: 1px solid var(--color-correct);
+                    // }
+
+                }
+                @include bp($desktop){
+                    display:none;
+                    width: 50vw;
+                    margin:0 auto;
+                    // display:block;
+
+                }
+            }        
+        }           
+    }
+    .form__grup{
+            display: block;
+            justify-content: space-around;
+            margin-left:auto;
+            margin-right: auto;
+            @include bp ($large-mobil){
+                margin: 5px auto;
+            }
+            @include bp($desktop){
+            width: 40vw;
+            margin:0 auto;
+            }
+            &-btn{
+                // botones se colocan en horizontal
+                display: flex;
+                flex-grow:1;
+                justify-content:space-between;
+                @include bp($desktop){
+                display: block;
+
+                }
+            }
+        &-user{
+    
+        }
+        &-password{
+            margin-top:8px;
+            @include bp($mini-tablet2){
+                align-self:start;
+            }
+        }
+    }
+    .form__grup-input{
+        @extend %form__grup-input;   
+        // margin : .6em 0;
+    }
+    .form__input{
+        @extend %form__input;
+    }
+    .form__input:focus{
+        @extend %ESTILOS_INPUTS-FOCUS;
+    }
+    .form__validation-state{
+        @extend %form__validation-state;
+    }
+    .form__checkbox:focus{
+        outline:2px solid var(--color-correct);
+
+    }
+    .form__checkbox::after{
+        content:'Recuerdame';
+        width: 100px;
+        height:15px;
+        // outline:none;
+        
+        padding-left:19px;
+        display:block;
+        color:var(--colorText);
+    }
+    .section_Login{
+
+        @include landscape(){
+            // margin:0 auto;
+            // width: 50vw;
+        }
+
+        & .form__grup{           
+            // padding-top:1px;
+            @include bp ($desktop){
+            }
+            @include bp($large-tablet){
+                margin:24px 0;
+            }
+            .form__label{
+                display: flex;
+                justify-content:space-between;
+
+                margin: 1.3em auto;
+                
+                @include bp ($desktop){
+                    width:40vw;
+                    margin:0 auto;
+
+                }
+                // text-align: center;
+                & .form__remenber {
+                font-size: .9rem;
+                // color:var(--fondoCeleste);
+                color:var( --color-links);
+                padding-bottom:.9px;
+                
+                border-bottom:1px solid var(--color-links);
+                // box-shadow: 0 1px 1px var(--fondoCeleste);
+                cursor: pointer;
+            }             
+            } 
+            
+        }
+        
+    }
+    // .form__messages{
+   
+    // }
+    .form__messages,
+    .form__input-error {
+            margin:2px;
+            outline: 1px solid var(--colorText);
+            background: var(--fondoRojo);
+            opacity: .8;
+            display: none;
+            padding:5px;
+            &-active{
+                display: block;
+            }
+            i{
+                padding-right:7px;
+                display: inline-block;
+            }
+            p{
+            margin: 0 auto;
+            padding:5px;
+            }
+    }
+

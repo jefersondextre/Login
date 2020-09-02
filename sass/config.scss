@@ -1,0 +1,274 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /*
+
+  #721b65
+  #B80D57
+  #FFD868
+  #FBFBFF
+  
+  
+  // #10485C
+  // #1A7697
+  // #76AD0C
+  // #66950A
+  // #5C6B70
+  
+
+  // #333A42
+  // #485058
+  // #A6A5A1
+  // #F1ECE9
+  // #D7443F
+
+  
+  */
+  font-size:1rem;
+  font-family: sans-serif;
+  
+  --colorText: #BFCDD9;
+  --color-focus: #176bc8;
+  --fondoBlanco:#fff;
+
+  
+
+  --fondo: RGB(222, 159, 83);
+// ======================= VARIABLES =================
+--color-title:  #FBFBFF;
+--color-sub-title:  #FBFBFF;
+
+--fondo-bg-a: #B80D57;
+--fondo-bg-b: #721b65;
+--fondo-bg-a: #721b65;
+--fondo-bg-b: #0E2230;
+--color-correct:#B80D57;
+--color-incorrect:#0E2230;
+--btn-bg:#0E2230;
+--color-messages:#B80D57;
+ 
+--bg-messages:  #FFD868;
+--color-links:#B80D57;
+
+
+
+
+
+  font-family: sans-serif;
+  
+  // distances
+  --borde: 5px;
+  --marginTopForm: 4rem;
+  --widthInput:80%;
+  --widthInputSubmit:30vw;
+  --widthBtn:30vw;
+}
+
+$mini-mobil : 280px;
+$medium-mobil: 360px;
+$medium-mobil2:376px;
+$large-mobil: 480px;
+$mini-tablet: 640px;
+$mini-tablet2:653px;
+
+$medium-tablet: 720px;
+$medium-tablet2: 768px;
+$large-tablet: 800px;
+$desktop: 1024px;
+$large-desktop: 1280px;
+
+
+// MIXIN -breakpoints - @include ...
+@mixin bp( $min-width) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+};
+@mixin landscape() {
+  @media all and (orientation: landscape) {
+    @content;
+  }
+}
+
+
+@mixin breakpointsW_H(){
+    @media(min-width:320px)and(max-height:960px){
+    @content;
+    }
+}
+// breakpoint para IPAD
+@mixin breakpointsW_H2(){
+    @media(min-width:768px)and(max-height:1024px){
+    @content;
+    }
+}
+@mixin breakpointsW_H3(){
+    @media(min-width:800px)and(max-height:1280px){
+    @content;
+    }
+}
+@mixin breakpointsW_H3(){
+    @media(min-width:812px)and(max-height:375px){
+    @content;
+    }
+}
+
+// placeholders - @extend ....
+//Botones 
+%styleBtn_ca{
+    // border: 1px solid var(--colorText);
+    border:1px solid var(--color-correct);  
+    background: var(--btn-bg);
+    color: var(--colorText);
+    border-radius:5px;
+    @include bp ($desktop){
+      border: 1px solid var(--colorText);
+
+    }
+}
+%styleBtn_Close{
+
+    opacity: 0.8;
+    border-radius:5px;
+    background-color: transparent;
+    border:1px solid var(--colorText);  
+    color:var(--colorText);
+
+
+}
+//Inputs
+%height_Input{
+        border: 4px solid transparent;
+        border-radius:4px;
+        height:30px;
+        line-height:auto;
+        padding: 0 4px 0 4px;
+}
+// Botones
+  %botones{
+    width:var(--widthBtn);
+    @include landscape(){
+          max-width:15em;
+    }
+    @include bp($desktop){
+          max-width:20em;
+    }
+    // padding:.6em 0;
+    cursor:pointer;
+  }
+
+/* mobil */
+body {
+  
+  height: 100vh;
+  overflow-y: hidden;
+  color: var(--color-title);
+}
+.main-container {
+      background-image: linear-gradient(
+                      55deg,
+                      var(--fondo-bg-b) 11%,
+                      var(--fondo-bg-a) 55%
+                    );
+      background-repeat: no-repeat;
+      color: var(--colorText);
+      display: flex;
+      margin:0;
+      width:100vw;
+      position: relative;
+      height:100vh;
+      @include bp($desktop){
+        flex-direction:column;
+    } 
+  @include bp($desktop){
+      .article_container{
+        padding-top:20vh;
+    }
+  }
+}
+.article_container{
+      display: flex;
+      position: absolute;
+      width:100vw;
+      @include bp($desktop){
+        width:100vw;
+      
+
+      }
+}
+// El redimencionamiento del "textarea" si anula con landscape(){}
+// la propiedad de css :  resize:none;
+// FORMULARIOS
+%ESTILOS_INPUTS-FOCUS{
+        // border:.5px solid var(--color-focus);
+        color: inherit;
+        outline:none;
+        box-shadow: 1px 0 10px var(--fondoAzul);
+}
+%ESTILOS_INPUTS-ERROR{
+        font-size: 12px;
+        margin-bottom:0;
+        //SE MUESTRA CUANDO HAY ERROR
+        display: block;
+}
+
+// VALIDACION DE FORMULARIOS STILOS
+%form__grup-input{
+        position: relative;
+        width: 80vw;
+        margin:5px auto;
+        border-radius:5px;
+        @include bp ($medium-mobil){
+                margin:5px 0;
+        }     
+        @include bp($desktop){
+                width: 40vw;
+        // margen espaciado vertical de los imputs
+                // margin:3px auto;
+        }
+}
+%form__input{
+        width:80vw;
+        @include bp($desktop){
+          width:40vw; 
+        }
+        margin-left: auto;
+        margin-right: auto;
+        @extend %height_Input;
+        // border: 2px solid transparent;
+        transition: .3s ease all;
+}
+%form__validation-state{
+        position: absolute;
+        right:5px;
+        top:7px;
+        font-size: 1rem;
+        z-index: 100;
+        height:15px;
+        opacity: 0;
+}
+input::-webkit-input-placeholder{
+  color:red;
+}
+input::-moz-placeholder{
+  color:red;
+}
+input:-ms-input-placeholder{
+  color:red;
+}
+input::-ms-input-placeholder{
+  color:red;
+}
+input::placeholder{
+  color:#c1c1c1;
+  
+}
+
+.wrap{
+  white-space: wrap;
+}

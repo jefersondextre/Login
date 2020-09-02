@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Login | Jadex</title>
+  </head>
+  <body>
+    <div class="main-container ">
+      <section class="cont_left " id="home">
+        <header class="header">
+          <picture>
+          <source srcset="./logo_desktop.svg" media="(min-width:1024px)">
+          <img class="logo" src="./logo_desktop.svg" alt="logo" />
+          
+          </picture>
+          <h2 class="menu-title">Lion's</h2>
+        </header>
+        <!-- <div class="span">Bienvenida a nuestra App</div> -->
+        <nav class="nav">
+          <ul>
+            <li class="menu-item">
+              <a class="menu-item-link Login"  href="#">INICIAR SESIÓN</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link CreateAccount"  href="#">CREAR NUEVA CUENTA</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <footer class="footer">
+          <span>Copyright © Derechos Reservados | </span>
+          <!-- <p></p> -->
+          <span>  Jadex - 2020</span>
+        </footer>
+      </section>
+      <article class="article_container">
+          <section class="cont_CreateAccount "  id="Account">
+            <article class="article_header">
+            <h2 class="menu-title">Registro de usuarios</h2>
+            <!-- <p class="words_Login">Ingresa tus datos completos </p> -->
+            </article>
+
+            <form class="form formAccount" id="formAccount"action="#" method="#">
+  	          <p class="words_Login">Ingresa tus datos completos</p>
+              <div class="form__grup-input" id="grup__user">
+                <input class="form__input input_form" type="text" title="Tu usuario solo debe contener letras o espacios en blanco" name="user" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Nombre de usuario"  required/>
+                <i class="form__validation-state fas fa-times-circle"></i>
+  
+              </div>
+              <div class="form__grup-input" id="grup__name">
+                <input class="form__input input_form" type="text" title="Tus nombres completos debe contener solo letras y espacios en blanco" name="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Nombres y apellidos"  required/>
+                <i class="form__validation-state fas fa-times-circle"></i>
+  
+              </div>
+              <div class="form__grup-input" id="grup__email">
+                <input class="form__input input_form"  type="email" title="Ingresa un email válido" name="email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" placeholder="correo electrónico"required/>
+                <i class="form__validation-state fas fa-times-circle"></i>
+
+              </div>
+              <div class="form__grup-input" id="grup__password">
+                <input class="form__input input_form" id="inputpassword" type="password" title="Debes escribir un máximo de 8 caracteres, entre ellos 1 mayuscula, 1 minuscula y caracteres especiales" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8}$" placeholder="contraseña" required/>
+                <i class="form__validation-state fas fa-times-circle"></i>
+
+              </div>
+              <div class="form__grup-input" id="grup__password2">
+                <input class="form__input input_form" id="inputpassword2" type="password" title="Confirmar la contraseña anterior" name="password2"  placeholder="Confirme la contraseña" required />
+                <i class="form__validation-state fas fa-times-circle"></i>
+
+              </div>
+              <div class="form__grup-input" id="grup__cargo">
+                <input class="form__input input_form" type="text" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Profesion  solo aceptan letras" name="cargo"  placeholder="Profesion" required/>
+                <i class="form__validation-state fas fa-times-circle"></i>
+
+              </div>
+              <footer>
+                <input class="input_form--btn registerAccount" id="register" type="submit" name="R" value="REGISTRARME" />
+                <input class="input_form--btn cancelbtn cancelLink" type="button" value="CANCELAR">
+                <!-- <p class="input_form--btn cancelbtn " ><a class="cancelLink" href="#home">CANCELAR</a></p> -->
+                <!-- <input class="input_form--btn cancelbtn" type="submit" name="C" value="CANCEL"/> -->
+              </footer>
+            </form>
+            <!-- <footer>Termine de llenar todos los campos antes de enviar el registro</footer> -->      
+          </section>
+          <section class="cont_Login Login" id="Login" >
+            <article class="article_header">
+              <h2 class="title_Login"> Mi cuenta</h2>
+                      
+            </article>
+
+            <form class="form form_Login" id="form_Login">
+              <p class="words_Login">Ingresa tus datos y presiona inicio </p>  
+              <div class="form__grup-input" id="grup__userLogin">
+                  <input type="text" class="form__input input_form" title="Su usuario no es valido" name="userLogin" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" id="user" placeholder="Usuario" required> 
+                  <i class="form__validation-state fas fa-times-circle"></i>
+  
+              </div>          
+              <div class="form__grup-input" id="grup__passwordLogin">
+                  <input type="password" class="form__input input_form" title="Ingrese  máximo 8 dígitos entre números, letras Mayúsculas y caracteres" name="passwordLogin" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8}$" id="password" placeholder="Contraseña" required> 
+                  <i class="form__validation-state fas fa-times-circle"></i>
+  
+              </div>
+              <section class="section_Login">
+                <div class="form__grup" >
+                  <article class="form__label">
+                    <input type="checkbox" class="form__checkbox" name="remenber" id="remenber" required>
+                    <div class="form__remenber">¿Olvidó su contraseña? </div>
+                  </article>
+                </div>
+              </section>
+              <div class="form__messages" id="form__messages">
+                <p class="form__grup">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  <b>Error</b>Por favor rellene el formulario correctamente
+                </p>
+              </div>         
+              <div class="form__grup-btn-send">
+                <div class="form__grup form__grup-btn">
+                  <input class="form__grup-login"type="submit" value="INICIO">
+                  <input class="form__grup-cancel cancelLink" type="button" value="CANCEL">
+                  <!-- <p class="form__grup-cancel" ><a  class="cancelLink" href="">CANCEL</a></p> -->
+                </div> 
+              </div>
+            </form>
+          
+          </section>
+          <section class="cont_Loader " > 
+            <div class="cont_Loader-img none"> 
+              <img src="./oval.svg" alt="Cargando"> 
+            </div>
+            <div class="cont_Loader-messages none">
+              <p>Datos enviados corréctamente</p>
+            </div>
+          </section>
+      </article>
+    </div>
+    <script src="./script.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/7834d66008.js" crossorigin="anonymous"></script>
+  </body>
+  <!--   
+  sass --watch sass/style.scss:style.css --style expanded
+  compressed | nested | compact | expanded 
+  -->
+</html>

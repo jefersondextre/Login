@@ -1,0 +1,24 @@
+.cont_Loader{
+    // display: block;
+    position: absolute;
+    z-index: 10000;
+    width: 100vw;
+    text-align: center;
+    bottom:-90vh;
+    @include landscape(){
+    }
+       @include bp($desktop){
+        bottom:-65vh;
+        }
+    // border: 1px solid green;
+    &-img{
+        padding-bottom: 1em;
+        @include bp($desktop){
+        }
+    }
+    &-messages{
+        color: var(--color-messages);
+        background: var(--bg-messages);
+        padding: 2rem;
+    }
+}

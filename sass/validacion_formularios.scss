@@ -1,0 +1,71 @@
+
+.contact-form-error{
+    // height: 20px;
+    display: block;
+    line-height:20px;
+        &.is-active{
+        // mensaje debajo de cada imput
+        display: block;
+        margin-top:-2px;
+        color: var(--colorBlanco);
+        background: orange;
+        background: var(--color-incorrect);
+        font-size: .7rem;
+        text-align: center;
+        -webkit-animation:show-message 1s 1 normal 0s ease-out both;
+                animation:show-message 1s 1 normal 0s ease-out both;
+        }
+}
+// ===============
+.form__input:focus{
+    // border:2px solid var(--color-focus);
+    opacity: 1;
+    outline:none;
+}
+.form__input-error{
+    // mensaje de error puesto estaticamente   
+}
+.form__grup-correct .form__validation-state{
+    color: var(--color-correct);
+    opacity:1;
+}
+.form__grup-correct .form__input{
+    border:3px solid var(--color-correct);
+    color: var(--color-correct)
+}
+.form__grup-incorrect .form__validation-state{
+    color: var(--color-incorrect);
+    opacity:1;
+}
+.form__grup-incorrect .form__input{
+    border:3px solid var(--color-incorrect);
+    color: var(--color-incorrect);
+}
+//=========================
+.none{
+    display: none;
+}
+@-webkit-keyframes show-message{
+    0%{
+        visibility: hidden;
+        opacity:0;
+    }
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+
+
+@keyframes show-message{
+    0%{
+        visibility: hidden;
+        opacity:0;
+    }
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
